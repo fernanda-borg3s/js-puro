@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Fotos deslizantes</title>
+</head>
+<body>
+    
+    <div class="slider">
+        <div class="slides">
+            <!--radio buttons start-->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <!--radio buttons end-->
+            <!--imagem slide start-->
+            <div class="slide first"> <!--AQUI tem duas classes-->
+                <img src="img/cidade.jpg" name="cor1" alt="">
+            </div>
+            <div class="slide">
+                <img src="img/floresta.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="img/montanha.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="img/praia.jpg" alt="">
+            </div>
+             <!--imagem slide end-->
+             <!---navegação automatica start-->
+             <div class="auto-navegar">
+                 <div class="auto-btn1"></div>
+                 <div class="auto-btn2"></div>
+                 <div class="auto-btn3"></div>
+                 <div class="auto-btn4"></div>
+             </div>
+               <!---navegação automatica end-->
+            
+        </div>
+        <!---navegação manual start-->
+        <div class="navegar-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+         <!---navegação manual end-->
+    </div>
+    <script type="text/javascript">
+     var counter = 1
+    setInterval(function(){
+        document.getElementById('radio' + counter).checked = true;
+        counter++
+        if(counter > 4){
+            counter = 1;
+            document.body.style.background = "#C1E1E4"
+        }else if(counter == 3){
+            document.body.style.background = "#000"
+        }else if(counter == 2){
+            document.body.style.background = "#B2BBC8"
+        }else{
+            document.body.style.background = "#6E6A46"
+        }
+    }, 3000); /* os 3000 é = a 3s*/
+
+
+    </script>
+   
+</body>
+</html>
